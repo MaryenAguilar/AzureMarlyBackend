@@ -75,54 +75,54 @@ public class SecurityConfigurations {
                 .build();
     }
 
-    @Bean
-    public CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration configuration = new CorsConfiguration();
+    // @Bean
+    // public CorsConfigurationSource corsConfigurationSource() {
+    //     CorsConfiguration configuration = new CorsConfiguration();
         
-        // Orígenes permitidos (tu frontend)
-        configuration.setAllowedOrigins(Arrays.asList(
-            "http://localhost:5173",
-            "http://localhost:3000",
-            "http://localhost:5174",
-            "https://marly.azurewebsites.net"
-        ));
+    //     // Orígenes permitidos (tu frontend)
+    //     configuration.setAllowedOrigins(Arrays.asList(
+    //         "http://localhost:5173",
+    //         "http://localhost:3000",
+    //         "http://localhost:5174",
+    //         "https://marly.azurewebsites.net"
+    //     ));
         
-        // Métodos HTTP permitidos
-        configuration.setAllowedMethods(Arrays.asList(
-            "GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH", "HEAD"
-        ));
+    //     // Métodos HTTP permitidos
+    //     configuration.setAllowedMethods(Arrays.asList(
+    //         "GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH", "HEAD"
+    //     ));
         
-        // Headers permitidos
-        configuration.setAllowedHeaders(Arrays.asList(
-            "Authorization",
-            "Content-Type",
-            "X-Requested-With",
-            "Accept",
-            "Origin",
-            "Access-Control-Request-Method",
-            "Access-Control-Request-Headers"
-        ));
+    //     // Headers permitidos
+    //     configuration.setAllowedHeaders(Arrays.asList(
+    //         "Authorization",
+    //         "Content-Type",
+    //         "X-Requested-With",
+    //         "Accept",
+    //         "Origin",
+    //         "Access-Control-Request-Method",
+    //         "Access-Control-Request-Headers"
+    //     ));
         
-        // Headers expuestos
-        configuration.setExposedHeaders(Arrays.asList(
-            "Authorization",
-            "Content-Type",
-            "Access-Control-Allow-Origin",
-            "Access-Control-Allow-Credentials"
-        ));
+    //     // Headers expuestos
+    //     configuration.setExposedHeaders(Arrays.asList(
+    //         "Authorization",
+    //         "Content-Type",
+    //         "Access-Control-Allow-Origin",
+    //         "Access-Control-Allow-Credentials"
+    //     ));
         
-        // CRÍTICO: Permitir credenciales (JWT)
-        configuration.setAllowCredentials(true);
+    //     // CRÍTICO: Permitir credenciales (JWT)
+    //     configuration.setAllowCredentials(true);
         
-        // Tiempo de cache para preflight
-        configuration.setMaxAge(3600L);
+    //     // Tiempo de cache para preflight
+    //     configuration.setMaxAge(3600L);
         
-        // Aplicar a todas las rutas
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration);
+    //     // Aplicar a todas las rutas
+    //     UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+    //     source.registerCorsConfiguration("/**", configuration);
         
-        return source;
-    }
+    //     return source;
+    // }
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration)
